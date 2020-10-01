@@ -2,7 +2,7 @@
 This project is a very specific and simple solution to a problem I was having. As those of you using TD Ameritrade as a broker may know, there is no report on their website that shows how your account is performing net of any cash flows made to or from the account. This is commonly referred to as the time-weighted rate of return (TWRR). After scouring the web (namely Reddit) I realized that, although I was not alone in my search for a solution, most people simply paid for a service or app to link up with their TDA account to help them visualize their portfolio performance. Being savvy (and frugal), I thought it would be a good opportunity to put my programming skills to use. This project allows me to see how my accounts are doing relative to a benchmark (SPY in this case). 
 
 ## Output
-The output is simply 2 things: 1) an html webpage produced with plotly of the portfolio returns and 2) a csv file of high level summary statistics for each account. See example snippet below.
+The output is simply 2 things: 1) an html webpage produced with plotly of the portfolio returns and 2) a csv file of high level summary statistics for each account. Since I have different strategies I experiment with, I wanted to break out each strategy in the summary table. See example snippet below.
 
 ![Output Example](https://github.com/tficar/Portfolio/blob/master/TDAmeritrade/TDA%20Report%20Output.PNG)
 
