@@ -302,14 +302,14 @@ if __name__ == '__main__':
     balance_selfdir = pd.read_csv('C:/Users/Tristan/Documents/Learning/Python/Data/TDA/chart (8).csv', thousands=',')
     deposits_hsa = pd.read_csv('C:/Users/Tristan/Documents/Learning/Python/Data/TDA/transactions (2).csv', thousands=',')
     deposits_selfdir = pd.read_csv('C:/Users/Tristan/Documents/Learning/Python/Data/TDA/transactions (3).csv', thousands=',')
-    real_gains_hsa = pd.read_excel(f'C:/Users/Tristan/Documents/Learning/Python/Data/TDA/RC_124002398_{start_date}_{end_date}.xlsx', headers=True, thousands=',')
-    real_gains_selfdir = pd.read_excel(f'C:/Users/Tristan/Documents/Learning/Python/Data/TDA/RC_454325656_{start_date}_{end_date}.xlsx', headers=True, thousands=',')
+    real_gains_hsa = pd.read_excel(f'C:/Users/Tristan/Documents/Learning/Python/Data/TDA/RC_*********_{start_date}_{end_date}.xlsx', headers=True, thousands=',')
+    real_gains_selfdir = pd.read_excel(f'C:/Users/Tristan/Documents/Learning/Python/Data/TDA/RC_*********_{start_date}_{end_date}.xlsx', headers=True, thousands=',')
     # Unrealized gains are on 2 different sheets. Concat to combine them
-    unreal_gainslo_hsa = pd.read_excel(f'C:/Users/Tristan/Documents/Learning/Python/Data/TDA/UC_124002398_{end_date}.xlsx', sheet_name='Unrealized Long', headers=True, thousands=',')
-    unreal_gainssh_hsa = pd.read_excel(f'C:/Users/Tristan/Documents/Learning/Python/Data/TDA/UC_124002398_{end_date}.xlsx', sheet_name='Unrealized Short', headers=True, thousands=',')
+    unreal_gainslo_hsa = pd.read_excel(f'C:/Users/Tristan/Documents/Learning/Python/Data/TDA/UC_*********_{end_date}.xlsx', sheet_name='Unrealized Long', headers=True, thousands=',')
+    unreal_gainssh_hsa = pd.read_excel(f'C:/Users/Tristan/Documents/Learning/Python/Data/TDA/UC_*********_{end_date}.xlsx', sheet_name='Unrealized Short', headers=True, thousands=',')
     unreal_gains_hsa = pd.concat([unreal_gainslo_hsa,unreal_gainssh_hsa]).reset_index(drop=True)
-    unreal_gainslo_selfdir = pd.read_excel(f'C:/Users/Tristan/Documents/Learning/Python/Data/TDA/UC_454325656_{end_date}.xlsx', sheet_name='Unrealized Long', headers=True, thousands=',')
-    unreal_gainssh_selfdir = pd.read_excel(f'C:/Users/Tristan/Documents/Learning/Python/Data/TDA/UC_454325656_{end_date}.xlsx', sheet_name='Unrealized Short', headers=True, thousands=',')
+    unreal_gainslo_selfdir = pd.read_excel(f'C:/Users/Tristan/Documents/Learning/Python/Data/TDA/UC_*********_{end_date}.xlsx', sheet_name='Unrealized Long', headers=True, thousands=',')
+    unreal_gainssh_selfdir = pd.read_excel(f'C:/Users/Tristan/Documents/Learning/Python/Data/TDA/UC_*********_{end_date}.xlsx', sheet_name='Unrealized Short', headers=True, thousands=',')
     unreal_gains_selfdir = pd.concat([unreal_gainslo_selfdir,unreal_gainssh_selfdir]).reset_index(drop=True)
     
     # Clean all dfs
