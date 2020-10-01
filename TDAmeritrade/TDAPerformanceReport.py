@@ -367,4 +367,6 @@ if __name__ == '__main__':
     daily_returns_plot.write_html("C:/Users/Tristan/Documents/Learning/Python/Output/TDA/daily_returns.html")
     perf_metrics.to_csv("C:/Users/Tristan/Documents/Learning/Python/Output/TDA/performance_metrics.csv")
 
+    print('HSA TWRR: ' + str(twrr_hsa))
+    print('SELFDIR TWRR: ' + str(twrr_selfdir))
     print('Results saved.')
