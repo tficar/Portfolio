@@ -1,0 +1,12 @@
+pandas==1.0.3
+numpy==1.18.2
+matplotlib==3.2.1
+plotly==4.10.0
+chart-studio==1.1.0
+pytrends==4.7.3
+dash==1.12.0
+dash-core-components==1.10.0
+dash-daq==0.4.0
+dash-html-components==1.0.3
+dash-renderer==1.4.1
+dash-table==4.7.0
