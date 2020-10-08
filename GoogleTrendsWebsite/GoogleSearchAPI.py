@@ -130,16 +130,6 @@ def get_regional_trends(kw_list, timeframe = 'today 5-y', geo = 'World', resolut
 
 # get_regional_trends(['keto','fat loss','pokemon','guns'], 'today 3-m', geo = 'US', resolution='DMA')
 
-# def filter_regional_trends(df, state):
-
-    """Filters the regional trend df for a specific state"""
-
-    # r = re.compile(f'.*{state}')
-    # return(df[df.index.isin(list(filter(r.match,df.index)))])
-
-# dff = get_regional_trends(['keto','fat loss','pokemon','guns'], 'today 3-m', geo = 'US', resolution='DMA')
-# filter_regional_trends(dff,'FL')
-
 def plot_regional_trends(df, kw, show = 'top', amount = 20):
 
     """
@@ -211,7 +201,6 @@ def get_related_keywords(kw, timeframe = 'today 5-y', geo = 'World', metric = 't
 
 # get_related_keywords('elderberry', timeframe='today 12-m', geo = 'US', metric='rising')
 
-# Function 4
 # pytrend.top_charts(2019, geo = 'US')
 # pytrend.today_searches()
 # pytrend.trending_searches(pn='mexico')
@@ -264,56 +253,6 @@ def get_keyword_correlations(kw_list, timeframe = 'today 5-y', geo = 'World'):
     df.reset_index(level=0, inplace=True)
 
     return df.corr()
-
-# def plot_keyword_correlations(kw_list, timeframe = 'today 5-y', geo = 'World'):
-
-    # """
-    # Returns a heatmap of correlations between a given keyword list
-
-    # Params:
-        # kw_list (string): a keyword list of interest (eg 'keto')
-        # timeframe (string): a timeframe to view the trend
-            # - defaults to 'today 5-y'
-            # - can only be values of 'today 5-y','today 12-m','today 3-m','today 1-m','now 7-d','now 1-d'
-        # geo (string): a scope for the location
-            # - defaults to 'World'
-            # - can be any two-letter country abbreviation or the default value
-
-    # Returns:
-        # heatmap of keywords
-    # """
-
-    # valid_timeframes = ['today 5-y','today 12-m','today 3-m','today 1-m','now 7-d','now 1-d']
-
-    # if timeframe not in valid_timeframes:
-        # raise Exception('Invalid timeframe. See docstring for valid timeframes.')
-
-    # group_key_words = list(zip(*[iter(kw_list)]*1))
-    # group_key_words = [list(x) for x in group_key_words]
-    # dicti = {}
-    # i = 1
-
-    # try:
-        # if geo == 'World':
-            # for word in group_key_words:
-                # pytrend.build_payload(word, timeframe = timeframe)
-                # dicti[i] = pytrend.interest_over_time()
-                # i+=1
-        # else:
-            # for word in group_key_words:
-                # pytrend.build_payload(word, timeframe = timeframe, geo = geo)
-                # dicti[i] = pytrend.interest_over_time()
-                # i+=1
-    # except ResponseError:
-        # raise Exception('Google response failed. Make sure the country code is valid.')
-
-    # df = pd.concat(dicti, axis=1)
-    # df.columns = df.columns.droplevel(0)
-    # df = df.drop('isPartial', axis = 1)
-    # df.reset_index(level=0, inplace=True)
-    # return(sns.heatmap(df.corr(), cmap='coolwarm', center=0, vmin=0, vmax=1, annot=True))
-
-# plot_keyword_correlations(['fat loss','probiotics','keto','protein'],'today 12-m')
 
 df_today_searches = pd.DataFrame(pytrend.today_searches()).rename(columns={'query':'Global Searches Today'})
 
