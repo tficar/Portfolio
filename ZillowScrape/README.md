@@ -6,7 +6,9 @@ Another aspect I wanted to practice with this project was using MySQL. I have ex
 The way the script works is by using a specific url to find all of the locations within that page and return data on those locations. More details on how to run this are included below.
 
 ## Output
-The output from this script is a csv of the houses located in the specific area. In addition to this, that same data is stored in the MySQL server. This was mainly just for practice, as we would not need 2 copies of the data. I have another project that links this data to Tableau and overlays local crime data to see if any locations are in bad areas, so this is another reason that I needed to save it to MySQL.
+The output from this script is a csv of the houses located in the specific area. In addition to this, that same data is stored in the MySQL server. This was mainly just for practice, as we would not need 2 copies of the data. I have another project that links this data to Tableau and overlays local crime data to see if any locations are in bad areas, so this is another reason that I needed to save it to MySQL. Here is a sample of the csv output.
+
+![Zillow Output](https://github.com/tficar/Portfolio/blob/master/ZillowScrape/Zillow%20Scrape%20Output.PNG)
 
 ## Setup/How to Run
 Once you have all of the required libraries installed, all you need to do is go to Zillow and use the tool to draw a cirle around the area of interest. I would also add any filters you may want, such as 2+ beds, price ranges, etc. Once you have this, you can copy the urls for each page into the script and you should be able to run it. It shouldn't take too long to run. It usually finishes within 15 minutes for me.
