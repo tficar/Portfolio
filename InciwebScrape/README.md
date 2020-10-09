@@ -4,7 +4,7 @@ This project was a solution I had to a manual process at my job. I work as an an
 ## Output
 The output of this script is an excel file with all of the wildfire data. It also includes a link to the Inciweb page for each wildfire in the event that more detailed information is needed. Here is a sample output.
 
-![Inciweb Output}(https://github.com/tficar/Portfolio/edit/master/InciwebScrape/)
+![Inciweb Output}(https://github.com/tficar/Portfolio/blob/master/InciwebScrape/Inciweb%20Output.PNG)
 
 ## Setup/How to Run
 Make sure that all libraries in the requirements.txt are installed. That is all you will need for this script.
