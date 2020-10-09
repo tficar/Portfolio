@@ -11,6 +11,6 @@ The output from this script is a csv of the houses located in the specific area.
 ![Zillow Output](https://github.com/tficar/Portfolio/blob/master/ZillowScrape/Zillow%20Scrape%20Output.PNG)
 
 ## Setup/How to Run
-Once you have all of the required libraries installed, all you need to do is go to Zillow and use the tool to draw a cirle around the area of interest. I would also add any filters you may want, such as 2+ beds, price ranges, etc. Once you have this, you can copy the urls for each page into the script and you should be able to run it. It shouldn't take too long to run. It usually finishes within 15 minutes for me.
+Once you have all of the required libraries installed, all you need to do is go to Zillow and use the tool to draw a cirle around the area of interest. I would also add any filters you may want, such as 2+ beds, price ranges, etc. Once you have this, you can copy the urls for each page into the script and you should be able to run it. It shouldn't take too long to run. It usually finishes within 15 minutes for me. FYI the 'Save Rate' column is great for identifying the best listings. It is a column that I engineered and the best houses are always at the top of the list when it comes to 'Save Rate'.
 
 Keep in mind that web scraping is tedious and that the html of the webpage often changes. This has happened numerous times and I have had to go in and debug. It is usually a very minor change (last time it was changing a 'u' to a 'c' in one of the regex functions). Just a heads up!
