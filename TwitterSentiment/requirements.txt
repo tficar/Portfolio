@@ -1,0 +1,7 @@
+jsonschema==3.2.0
+pandas==1.0.3
+numpy==1.18.2
+seaborn==0.10.0
+matplotlib==3.2.1
+textblob==0.15.3
+tweepy==3.8.0
