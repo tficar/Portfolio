@@ -3,7 +3,7 @@ This project was the capstone project for the Data Science Specialization offere
 
 You may notice that the code is more disorganized than usual. This project was one of the first data science projects that I completed, so my coding organization was not the same.
 
-Below is a snippet of the shiny app that was built. You can also visit it [here](https://tficar.shinyapps.io/CourseraTextPrediction/).
+Below is a snippet of the shiny app that was built. It is a very bare bones version of an app, and I am in the process of beefing it up. You can visit it [here](https://tficar.shinyapps.io/CourseraTextPrediction/).
 
 ![app](https://github.com/tficar/Portfolio/blob/master/TextPrediction/App.PNG)
 
