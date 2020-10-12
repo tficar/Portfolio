@@ -1,0 +1,56 @@
+Text Prediction Application
+========================================================
+author: Tristan Ficarro
+date: 2/6/2020
+autosize: true
+transition: fade
+transition-speed: slow
+
+Background
+========================================================
+autosize: true
+transition: fade
+transition-speed: slow
+
+This application is the Capstone Project from the Coursera Data Science Specialization. Its purpose is to
+predict the next word of a given sentence that is input by the end user.
+
+The data comes from Coursera and this project is sponsored by **Swiftkey**.
+
+
+Creation of Application
+========================================================
+autosize: true
+transition: fade
+transition-speed: slow
+
+<font size = '4'>
+The underlying model in the application uses a "back-off" approach to predict the next word. First, a random sample of the provided text files was taken to reduce the memory needed to run the model. Then the text was cleaned and formed into what is known as [ngrams](https://en.wikipedia.org/wiki/N-gram). For this model, I use quadrigram, trigram, and bigram to predict a word given the sentence. The model checks for a quadrigram match first, then trigram, then bigram. The most common quadrigrams can be seen in the image below.
+</font>
+```{r out.width = "70%", echo=FALSE}
+include_graphics('Quadgrams.png')
+```
+
+How it Works
+========================================================
+autosize: true
+transition: fade
+transition-speed: slow
+
+<font size = '4'>
+The application is hosted on Shiny and can be found [here](https://tficar.shinyapps.io/CourseraTextPrediction/). In the image below we can see what the application looks like. The section noted in red is where the user enters their input. This input string is then cleaned and looked up in the ngrams that were created. The blue sections are where the predicted word and output graph are located. All of this information can be found in the green section.
+</font>
+```{r out.width = "65%", echo=FALSE}
+include_graphics('App.png')
+```
+
+Resources
+========================================================
+autosize: true
+
+As mentioned before, the Shiny app can be found [here](https://tficar.shinyapps.io/CourseraTextPrediction/).
+
+The milestone report, which will include more exploratory analysis and charts, can be found [here](https://rpubs.com/tficar/CourseraCapMilestone_TMF).
+
+I hope you enjoy the app and find it useful. Thank you!
+
