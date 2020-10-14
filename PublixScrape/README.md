@@ -7,4 +7,4 @@ The output for this project is an email that contains the specified deals. Publi
 ![Publix](https://github.com/tficar/Portfolio/blob/master/PublixScrape/Publix%20Output.PNG)
 
 ## Setup/How to Run
-To run this, you will need a few things. First, make sure you have 
+To run this, you will need a few things. First, make sure you have everything in the requirements.txt. This includes downloading the web driver needed to run Selenium. Once you have this, you will need to update the email information on lines 83, 102, and 105 to reflect your email address, server, and login information, respectively. Lastly, you will need to update the zip code located on line 36 to reflect the zip code closest to you.
