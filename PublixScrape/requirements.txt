@@ -1,0 +1,5 @@
+pandas==1.0.3
+selenium==3.141.0
+webdriver-manager==3.2.2
+beautifulsoup4==4.9.0
+download web driver here: https://chromedriver.chromium.org/downloads
