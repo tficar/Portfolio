@@ -115,6 +115,7 @@ if __name__ == '__main__':
     bogo_df = extract_bogo_info(bogo_html)
     wine_df = bogo_df[bogo_df['Product'].str.contains('Wine')]
     newman_sale = len(bogo_df[bogo_df['Product'].str.contains('Newmans Own Pizza')].index) > 0
+    cous_sale = len(bogo_df[bogo_df['Product'].str.contains('Near East Couscous')].index) > 0
     email_body = wine_df
     email_body = """    <html>
       <head></head>
@@ -125,5 +126,7 @@ if __name__ == '__main__':
     """.format(wine_df.to_html())
     if newman_sale:
         email_body = email_body + '\n\n***NEWMAN IS ON SALE***'
-    send_email('your_recipient','BOGO Wines & Newman',email_body)
+    if cous_sale:
+        email_body = email_body + '\n\n***COUSCOUS IS ON SALE***'
+    send_email('tficar@yahoo.com','BOGO Wines & Newman',email_body)
 
