@@ -115,13 +115,13 @@ def get_zacks_data(stock_ticker):
     zacks_rank = stock_result_soup.find("div", class_ = "zr_rankbox")
     
     try:
-        if zacks_rank.p.text.strip() == '':
+        if zacks_rank.find('p', class_ = 'rank_view').text.strip() == '':
             zacks_rank = '0'
         else:
             try:
-                zacks_rank = zacks_rank.p.text.strip().replace('\xa0 ','')[0]
+                zacks_rank = zacks_rank.find('p', class_ = 'rank_view').text.strip().replace('\xa0 ','')[0]
             except:
-                zacks_rank = zacks_rank.p.text.strip()[0]
+                zacks_rank = zacks_rank.find('p', class_ = 'rank_view').text.strip()[0]
     except:
         zacks_rank = '0'
     
@@ -129,7 +129,7 @@ def get_zacks_data(stock_ticker):
         style_scores = ['NA','NA','NA','NA']
     else:
         style_scores = stock_result_soup.find("div", class_ = "zr_rankbox composite_group")
-        style_scores = style_scores.p.text.strip().replace('\xa0',' ').split('|')
+        style_scores = style_scores.find('p', class_ = 'rank_view').text.strip().replace('\xa0',' ').split('|')
         style_scores = [s.strip() for s in style_scores]
         style_scores = [s[0] for s in style_scores]
     
