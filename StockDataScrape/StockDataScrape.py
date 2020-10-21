@@ -367,9 +367,9 @@ if __name__ == '__main__':
     watchlist_data_clean['PEG_pctdiff'] = (watchlist_data_clean['PEG'].replace(0,3) - watchlist_data_clean['PEG_sec'])/(watchlist_data_clean['PEG_sec'])
     watchlist_data_clean['DE_pctdiff'] = (watchlist_data_clean['Debt/Eq'].replace(0,1.5) - watchlist_data_clean['D/E_sec'])/(watchlist_data_clean['D/E_sec'])
 
-    cols = ['Group', 'Price', 'Avg Volume', 'P/E', 'PE_curr_sec', 'PE_pctdiff', 'PEG', 'PEG_sec', 'PEG_pctdiff',
-            'Debt/Eq', 'D/E_sec', 'DE_pctdiff', 'EV/EBITDA', 'EV/EBITDA_sec', 'EV/EBITDA_pctdiff', 'ROE', 'ROE_sec',
-            'ROE_pctdiff', 'P/B']
+    cols = ['Group', 'Price', 'Avg Volume', 'ZacksRank', 'Cmp Rtg', 'Eps Rtg', 'P/E', 'PE_curr_sec', 'PE_pctdiff', 'PEG',
+            'PEG_sec', 'PEG_pctdiff', 'Debt/Eq', 'D/E_sec', 'DE_pctdiff', 'EV/EBITDA', 'EV/EBITDA_sec', 'EV/EBITDA_pctdiff',
+            'ROE', 'ROE_sec', 'ROE_pctdiff', 'P/B']
     watchlist_data_clean = watchlist_data_clean[cols]
 
     # Rank df by factors
