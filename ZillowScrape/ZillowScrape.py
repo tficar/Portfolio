@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[87]:
-
 
 import requests
 import math
@@ -17,20 +12,12 @@ import geopy.distance
 import pymysql
 from sqlalchemy import create_engine
 
-
-# In[88]:
-
-
 # create sqlalchemy engine
 user = 'tficar'
 pw = '****'
 db = 'test_db'
 
 engine = create_engine(f"mysql+pymysql://{user}:{pw}@localhost/{db}")
-
-
-# In[101]:
-
 
 headers = {'user-agent':"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36","Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8", "Accept-Language": "en-US,en;q=0.5", "Accept-Encoding": "gzip, deflate", "DNT": "1", "Connection": "close", "Upgrade-Insecure-Requests": "1"}
 # headers = {'user-agent':"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.1.1 Safari/605.1.15","Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8", "Accept-Language": "en-US,en;q=0.5", "Accept-Encoding": "gzip, deflate", "DNT": "1", "Connection": "close", "Upgrade-Insecure-Requests": "1"}
@@ -62,10 +49,6 @@ zillow_url_stpete_allpages = [zillow_url_stpete_pg1,zillow_url_stpete_pg2,zillow
                               zillow_url_stpete_pg5,zillow_url_stpete_pg6,zillow_url_stpete_pg7,zillow_url_stpete_pg8,
                               zillow_url_stpete_pg9,zillow_url_stpete_pg10]
 
-
-# In[ ]:
-
-
 def get_page_list(page1_url):
     
     '''Returns a list of the available zillow pages given the first page of the search'''
@@ -77,10 +60,6 @@ def get_page_list(page1_url):
     num_pages = math.ceil(num_listings/40)
     
     return zillow_url_stpete_allpages[:num_pages]
-
-
-# In[112]:
-
 
 def scrape_zillow_main(page_url):
     
@@ -199,10 +178,6 @@ def scrape_zillow_main(page_url):
     
     return(df_listings)
 
-
-# In[110]:
-
-
 def scrape_zillow_details(url):
     
     """Returns a data frame of detailed Zillow data given a url for a specific listing"""
@@ -268,7 +243,7 @@ def scrape_zillow_details(url):
     except:
         vals.append(np.nan)
     
-    for item in soup.findAll('span',class_=re.compile('Text-aiai24-0 c.*')): 
+    for item in soup.findAll('span',class_=re.compile('Text-aiai24-0 g.*')): 
 
         cols.append(item.text.split(':')[0])
         try:
@@ -277,10 +252,6 @@ def scrape_zillow_details(url):
             vals.append(np.nan)
 
     return(pd.DataFrame(vals,cols).T)
-
-
-# In[114]:
-
 
 def get_zillow_main(url_list):
     
@@ -296,10 +267,6 @@ def get_zillow_main(url_list):
     df_listings_main = pd.concat(all_listings, ignore_index=True)
     
     return(df_listings_main)
-
-
-# In[94]:
-
 
 def get_zillow_details(df_listings_main):
     
@@ -318,10 +285,6 @@ def get_zillow_details(df_listings_main):
     df_listings_detail = pd.concat(list_df, axis = 0, ignore_index=True)
     
     return(df_listings_detail)
-
-
-# In[95]:
-
 
 def create_final_zillow_df(df_listings_detail,df_listings_main):
     
@@ -380,10 +343,6 @@ def create_final_zillow_df(df_listings_detail,df_listings_main):
     
     return(df_final)
 
-
-# In[96]:
-
-
 def save_zillow_output(df_final):
     
     """Saves output of final df to both MySQL and a .csv file"""
@@ -407,10 +366,6 @@ def save_zillow_output(df_final):
         listings_all.to_csv('C:/Users/Tristan/Documents/Learning/Python/Output/Zillow/ZillowListingsAll.csv', index=False)
     print('Output saved to csv file.')
 
-
-# In[ ]:
-
-
 if __name__ == '__main__':
     
     page_list = get_page_list(zillow_url_stpete_pg1)
@@ -418,10 +373,4 @@ if __name__ == '__main__':
     detail_df = get_zillow_details(main_df)
     final_df = create_final_zillow_df(detail_df, main_df)
     save_zillow_output(final_df)
-
-
-# In[ ]:
-
-
-
 
