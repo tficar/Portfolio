@@ -39,7 +39,7 @@ def get_bogo_html():
     time.sleep(3)
     # Click first result, which is the Gateway Crossings location
     driver.find_element_by_xpath('/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div/ul/li[1]/div/button').click()
-    time.sleep(5)
+    time.sleep(10)
     # Click the load more button
     driver.find_element_by_xpath('/html/body/div[1]/div/section/div[3]/div[2]/div[2]/div[3]/button').click()
     time.sleep(1)
