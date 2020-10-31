@@ -114,16 +114,17 @@ if __name__ == '__main__':
     bogo_html = get_bogo_html()
     bogo_df = extract_bogo_info(bogo_html)
     wine_df = bogo_df[bogo_df['Product'].str.contains('Wine')]
+    ice_cream_df = bogo_df[bogo_df['Product'].str.contains('Ice Cream')]
     newman_sale = len(bogo_df[bogo_df['Product'].str.contains('Newmans Own Pizza')].index) > 0
     cous_sale = len(bogo_df[bogo_df['Product'].str.contains('Near East Couscous')].index) > 0
-    email_body = wine_df
+    email_df = pd.concat([wine_df,ice_cream_df])
     email_body = """    <html>
       <head></head>
       <body>
         {0}
       </body>
     </html>
-    """.format(wine_df.to_html())
+    """.format(email_df.to_html())
     if newman_sale:
         email_body = email_body + '\n\n***NEWMAN IS ON SALE***'
     if cous_sale:
