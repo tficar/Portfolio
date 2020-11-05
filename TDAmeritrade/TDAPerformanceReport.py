@@ -369,4 +369,5 @@ if __name__ == '__main__':
 
     print('HSA TWRR: ' + str(twrr_hsa))
     print('SELFDIR TWRR: ' + str(twrr_selfdir))
+    print('SPY TWRR: ' + str(1 + spy.iloc[-1,1]))
     print('Results saved.')
